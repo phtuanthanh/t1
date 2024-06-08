@@ -14,7 +14,7 @@ public class Category_View {
         String result = "";
 
         Class.forName("org.postgresql.Driver");
-        try (Connection connection = DriverManager.getConnection("jdbc:postgresql://172.17.0.2:5432/database", "postgres", "");
+        try (Connection connection = DriverManager.getConnection("jdbc:postgresql://172.18.0.2:5432/database", "postgres", "");
              Statement statement = connection.createStatement();
              ResultSet rs = statement.executeQuery(query)) {
 

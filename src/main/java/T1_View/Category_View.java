@@ -9,11 +9,11 @@ import com.mysql.jdbc.Messages;
 public class Category_View {
     public String Category(String id) throws ClassNotFoundException {
         String result = "";
-        String sql = "{CALL DynamicQuery3(?)}";
+        String sql = "{CALL DynamicQuery1(?)}";
         
         // Sử dụng driver mới cho MySQL
 		Class.forName("com.mysql.jdbc.Driver");
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://172.17.0.3:3306/mydata", "root", "root");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://172.17.0.3:3306/my_data", "root", "root");
              CallableStatement stmt = connection.prepareCall(sql)) {
              
             // Thiết lập giá trị cho tham số đầu vào

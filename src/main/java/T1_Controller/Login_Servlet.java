@@ -54,6 +54,7 @@ public class Login_Servlet extends HttpServlet {
 			}
 			else
 			{
+				System.out.println(lg.loginUser(user, pass));
 				request.setAttribute("errorMessage",lg.loginUser(user, pass));
 		       request.getRequestDispatcher("/WEB-INF/templates/index.jsp").forward(request, response);
 			}

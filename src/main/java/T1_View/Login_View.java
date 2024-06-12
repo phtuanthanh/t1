@@ -15,9 +15,11 @@ public class Login_View {
 		String query = String.format("SELECT * FROM public.\"user\" where \"UserName\"='%s' And \"PassWord\"='%s'",user,Pass);
 //		System.out.println(query);
 		String sql="";
-try {
+        int httpStatus = 200; // Internal Server Error
+
+        try {
 			Class.forName("org.postgresql.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:postgresql://172.17.0.2:5432/database", "postgres", "");
+		     Connection connection = DriverManager.getConnection("jdbc:postgresql://172.17.0.2/database", "postgres", "123456789");
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
             while(rs.next())
@@ -33,8 +35,9 @@ try {
 		}
 		catch(Exception a)
 		{
-		a.printStackTrace();
+			 	a.printStackTrace();
 		}
-		return sql;
+        
+        return sql;
 	}
 }

@@ -13,7 +13,7 @@ public class Category_View {
         
         // Sử dụng driver mới cho MySQL
 		Class.forName("com.mysql.jdbc.Driver");
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/mydata", "root", "root");
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://172.17.0.3:3306/mydata", "root", "root");
              CallableStatement stmt = connection.prepareCall(sql)) {
              
             // Thiết lập giá trị cho tham số đầu vào
